@@ -4,7 +4,7 @@ metadata:
   name: application1
   labels:
     app: application1
-    namespace: java-dev
+  namespace: java-dev
 spec:
   externalIPs:
   - 172.31.24.128 # Give the private ip of master/slave

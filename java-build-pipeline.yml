@@ -2,8 +2,8 @@ trigger:
 - master
 
 pool:
-  name: batch3-cicd-pool
-  vmImage: server1
+  name: javaapp-cicd-pool
+  vmImage: workstation
 
 steps:
 
@@ -40,7 +40,7 @@ steps:
     publishDirectory: '/tmp/$(version)'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '25977150-2660-41de-841f-34737f921521'
-    vstsFeedPackagePublish: 'javaapp'
+    vstsFeedPackagePublish: 'javaapplication'
     versionOption: 'custom'
     versionPublish: '$(version)'
 

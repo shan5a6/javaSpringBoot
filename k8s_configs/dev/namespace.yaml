@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aidevops-dev
+  labels:
+    app: aidevops
+    costcenter: dvsaidevops
+  namespace: aidevops-dev
+---

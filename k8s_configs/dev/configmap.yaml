@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dvsaidevopsnov
+  namespace: dvsaidevopsnov-dev
+  labels:
+    app: dvsaidevopsnov
+    costcenter: dvsaidevops
+data:
+  APP_ENV: production
+  LOG_LEVEL: info
+  API_URL: https://api.example.com
+---

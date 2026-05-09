@@ -1,0 +1,16 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'acr-conn'
+    repository: 'myapp-java'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
+    addPipelineData: false
+    addBaseImageData: false

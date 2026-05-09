@@ -1,0 +1,30 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Bash@3
+  displayName: "code build"
+  inputs:
+    targetType: 'inline'
+    script: |
+      #!/bin/bash
+      mvn clean package
+- task: Bash@3
+  displayName: "collectiong versio no"
+  inputs:
+    targetType: 'inline'
+    script: |
+      #!/bin/bash
+      echo "##vso[task.setvariable variable=version]$(cat pom.xml|grep "<version>"|head -1|sed 's/<version>//g'|sed 's/<\/version>//g'|sed 's/[[:space:]]//g')"
+
+- task: Bash@3
+  displayName: "Prepare artifact"
+  inputs:
+    targetType: 'inline'
+    script: |
+      #!/bin/bash
+      mkdir -p /tmp/$(version)
+      cp ./target/*.jar /tmp/$(version)/app.jar

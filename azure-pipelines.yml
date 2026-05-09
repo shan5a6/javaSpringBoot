@@ -26,5 +26,7 @@ steps:
     targetType: 'inline'
     script: |
       #!/bin/bash
+      echo "-- my verion is $(version)"
       mkdir -p /tmp/$(version)
       cp ./target/*.jar /tmp/$(version)/app.jar
+      ls -l /tmp/$(version)

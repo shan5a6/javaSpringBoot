@@ -31,10 +31,19 @@ steps:
       cp ./target/*.jar /tmp/$(version)/app.jar
       ls -l /tmp/$(version)
 - task: UniversalPackages@1
-  displayName: "publish artifacts"
   inputs:
     command: 'publish'
-    feed: 'myapp-artifacts'
+    feed: 'mcdaib1/myapp-artifacts'
     packageName: 'javaspringboot'
     packageVersion: '$(version)'
-    directory: '/tmp/$(version)'
+    directory: '$(System.DefaultWorkingDirectory)'
+# - task: UniversalPackages@1
+#   displayName: "publish artifacts"
+#   inputs:
+#     command: 'publish'
+#     feed: 'myapp-artifacts'
+#     packageName: 'javaspringboot'
+#     packageVersion: '$(version)'
+#     directory: '/tmp/$(version)'
+
+

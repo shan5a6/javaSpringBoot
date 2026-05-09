@@ -30,3 +30,11 @@ steps:
       mkdir -p /tmp/$(version)
       cp ./target/*.jar /tmp/$(version)/app.jar
       ls -l /tmp/$(version)
+- task: UniversalPackages@1
+  displayName: "publish artifacts"
+  inputs:
+    command: 'publish'
+    feed: 'myapp-artifacts'
+    packageName: 'javaspringboot'
+    packageVersion: '$(version)'
+    directory: '/tmp/$(version)'

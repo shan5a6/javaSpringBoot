@@ -22,3 +22,8 @@ steps:
       mkdir /tmp/k8s
       cp ./k8s-configs/*.yaml  /tmp/k8s
       ls -l /tmp/k8s
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '/tmp/k8s'
+    ArtifactName: 'k8s'
+    publishLocation: 'Container'

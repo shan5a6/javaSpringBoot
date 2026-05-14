@@ -7,8 +7,8 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'acr-conn'
-    repository: 'myapp-java'
+    containerRegistry: 'dvsappacr-conn'
+    repository: 'dvsapp'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 'latest'

@@ -19,7 +19,7 @@ spec:
         app: application1
     spec:
       containers:
-      - image: docker pull dvsappacr.azurecr.io/dvsapp:latest
+      - image: dvsappacr.azurecr.io/dvsapp:latest
         name: application1
         resources: {}
 status: {}

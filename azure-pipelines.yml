@@ -36,7 +36,7 @@ steps:
     feed: 'mcdaib1/myapp-artifacts'
     packageName: 'javaspringboot'
     packageVersion: '$(version)'
-    directory: '$(System.DefaultWorkingDirectory)'
+    directory: '/tmp/$(version)'
 # - task: UniversalPackages@1
 #   displayName: "publish artifacts"
 #   inputs:

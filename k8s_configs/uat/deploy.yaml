@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dvsaidevopsnov
+  namespace: dvsaidevopsnov-uat
+  labels:
+    app: dvsaidevopsnov
+    costcenter: dvsaidevops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dvsaidevopsnov
+  template:
+    metadata:
+      labels:
+        app: dvsaidevopsnov
+    spec:
+      containers:
+      - name: dvsaidevopsnov
+        image: shan5a6/aidevopsdemo:nov
+        ports:
+        - containerPort: 8080
+---

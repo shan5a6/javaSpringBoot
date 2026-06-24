@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dvsaidevopsnov-pt
+  labels:
+    app: dvsaidevopsnov
+    costcenter: dvsaidevops
+  namespace: dvsaidevopsnov-pt
+---

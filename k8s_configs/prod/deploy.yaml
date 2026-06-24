@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aidevopsapp
+  namespace: aidevopsapp-prod
+  labels:
+    app: aidevopsapp
+    costcenter: dvsaidevops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aidevopsapp
+  template:
+    metadata:
+      labels:
+        app: aidevopsapp
+    spec:
+      containers:
+      - name: aidevopsapp
+        image: shan5a6/aidevopsb2:v1.0.0
+        ports:
+        - containerPort: 8080
+---

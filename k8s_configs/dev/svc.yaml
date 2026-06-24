@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aidevops
+  namespace: aidevops-dev
+  labels:
+    app: myapp
+    costcenter: dvsaidevops
+spec:
+  type: ClusterIP
+  selector:
+    app: aidevops
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+---

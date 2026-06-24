@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dvsmcdaidemo-sit
+  labels:
+    app: dvsmcdaidemo
+    costcenter: dvsaidevops
+  namespace: dvsmcdaidemo-sit
+---
